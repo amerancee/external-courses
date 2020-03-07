@@ -1,9 +1,9 @@
 ﻿"use strict"
-function showElements(arr) {
-  for (let i=0; i<arr.length; i++) {
-    console.log(arr[i]);
+function showElements(elements) {
+  for (let i = 0; i < elements.length; i++) {
+    console.log(elements[i]);
   }
-  console.log(arr.length)
+  console.log(elements.length);
   return undefined;
 }
 

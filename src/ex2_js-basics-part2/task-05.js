@@ -1,9 +1,9 @@
 "use strict"
-function getMaxValue (arr) {
-	let result = arr[0];
-  for (let i = 0; i < arr.length; i++) {
-    if ( result < arr[i] ) {
-      result = arr[i];
+function getMaxValue(values) {
+	let result = values[0];
+  for (let i = 0; i < values.length; i++) {
+    if (result < values[i]) {
+      result = values[i];
 		}
   }
 	return result;

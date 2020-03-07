@@ -1,16 +1,20 @@
 "use strict"
-function checkType(value) {
-	let type = typeof(value);
+function getType(unknownElement) {
+	let type = typeof(unknownElement);
 	switch (type) {
 		case "string":
 		  return "string";
       break;
 		case "number":
-      return isNaN(value) ? undefined : "number";
+      if ( isNaN(unknownElement) ) { 
+        return undefined;
+        break;
+      }
+      return "number";
       break;
 		default:
-		  return undefined
+		  return undefined;
 	}
 }
 
-module.exports = checkType
+module.exports = getType

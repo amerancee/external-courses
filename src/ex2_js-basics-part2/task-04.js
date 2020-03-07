@@ -1,12 +1,12 @@
 "use strict"
-function isSameElemens(arr) {
+function isSameElements(elements) {
 	let result = true;
-  for (let i = 0; i < arr.length; i++) {
-    if ( arr[i] !== arr[0] ) {
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i] !== elements[0]) {
 				result = false;
     }
   }
 	return result;
 }
 
-module.exports = isSameElemens
+module.exports = isSameElements

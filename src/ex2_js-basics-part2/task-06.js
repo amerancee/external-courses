@@ -1,6 +1,6 @@
 "use strict"
-function isPrimeNumber (number) {
-	if ( isCorrectValue(number) === false ) {
+function isPrimeNumber(number) {
+	if ( isCorrectNumber(number) === false ) {
 		return 'Данные неверны';
 	}
 	for (let i = 2; i < number; i++) {
@@ -11,7 +11,7 @@ function isPrimeNumber (number) {
 	return `Число ${number} - простое число`;
 }
 
-function isCorrectValue (number) {
+function isCorrectNumber(number) {
 	if (number > 1000 || number < 0 || number === 0 || number === 1) {
 		return false;
 	} 
