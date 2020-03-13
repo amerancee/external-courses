@@ -3,7 +3,7 @@ function addNewKey(newKey, object) {
 	if (newKey in object) {
 		return object;
 	}
-	object[newKey] = 'new'; //eslint-disable-line no-param-reassign
+	Object.assign(object, {[newKey]: "new"});
 	return object;
 }
 
