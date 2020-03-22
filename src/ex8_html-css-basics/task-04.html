@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Task-04</title>
+	<link rel="stylesheet" href="task-04.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<style>
+		li a {
+			text-decoration: none;
+			font-size: 2rem;
+			color: #0e153a;
+			background: #ff304f;
+			padding: 3px;
+			transition: 200ms ease-in-out;
+		}
+		li a:hover {
+			background: #46c3db;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>HTML basics</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Lists</h2>
+			<article class="lists-group">
+				<div>
+					<h3>Ordered list:</h3>
+					<ol class="list-content">
+						<li>first item</li>
+						<li>second item</li>
+						<li>third item</li>
+						<li>fourth item</li>
+						<li>fifth item</li>
+					</ol>
+				</div>
+				<div>
+					<h3>Unordered list:</h3>
+					<ul class="list-content">
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+						<li>E</li>
+					</ul>
+				</div>
+				<div>
+					<h3>List with links</h3>
+					<ul class="links-list">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3>Description list</h3>
+					<dl class="list-content">
+						<dt>Name</dt>
+						<dd>Godzilla</dd>
+						<dt>Born</dt>
+						<dd>1952</dd>
+						<dt>Birthplace</dt>
+						<dd>Japan</dd>
+						<dt>Color</dt>
+						<dd>Green</dd>
+					</dl>
+				</div>
+				<div>
+					<h3>Nested list</h3>
+					<ul class="list-content">
+						<li>List item one</li>
+						<li>List item two with subitems:
+							<ul>
+								<li>Subitem 1
+									<ul>
+										<li>SubSubitem 1</li>
+										<li>SubSubitem 2</li>
+									</ul>
+								</li>
+								<li>Subitem 2</li>
+							</ul>
+						</li>
+						<li>Final list item</li>
+					</ul>
+				</div>
+			</article>
+			<hr />
+		</section>
+		<section>
+			<h2>Paragraphs</h2>
+			<p class="text-content" style="color: rgba(56, 25, 117, 1);">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				<br />
+				Ut enim ad minim viniam, quis nostrud exercitation ullamco laboris 
+				nisi ut aliquip ex ea commodo consequat.
+				<br />
+				Duis aute irure dolor in reprehenderit in voluptate velit esse 
+				cillum dolore eu fugiat nulla pariatur.
+				<br />
+				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+				officia deserunt mollit anim id est laborum.
+			</p>
+			<hr />
+		</section>
+		<section>	
+			<h2>Tables</h2>
+			<table>
+				<tr>
+					<th>First name</th>
+					<th>Last name</th>
+				</tr>
+				<tr>
+					<td>Jonh</td>
+					<td>Doe</td>
+				</tr>
+				<tr>
+					<td>Jane</td>
+					<td>Doe</td>
+				</tr>
+			</table>
+			<hr />
+		</section>
+		<section>
+			<h2>Image</h2>
+			<article class="image-box">
+				<h3 style="margin-left: 15px;">Two images example</h3>
+				<div class="image-items">
+					<figure>
+						<img src="4-morning.jpg" alt="Morning city" />
+						<figcaption>This is an morning city</figcaption>
+					</figure>
+					<figure>
+						<img src="4-evening.jpg" alt="Evening city" />
+						<figcaption>This is an evening city</figcaption>
+					</figure>
+				</div>
+			</article>
+			<hr />		
+		</section>
+		<section>
+			<h2>Pre tag</h2>
+			<pre class="js-description">
+    if (time = 20) {
+      greeting = "good day";
+    } else {
+      greeting = "good evening";
+    }
+			</pre>
+		</section>
+	</main>
+</body>
+</html>
