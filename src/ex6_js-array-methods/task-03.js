@@ -1,7 +1,7 @@
 "use strict"
 function isEvery(array, callback) {
 	for (let i=0; i<array.length; i++) {
-		if (callback(array[i], i, array) === false) {
+		if (!callback(array[i], i, array)) {
 			return false;
 		}
 	}
