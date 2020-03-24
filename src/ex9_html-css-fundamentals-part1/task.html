@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Additional task</title>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <header>
+    <h1>Send feedback here</h1>
+    <p>* required fields</p>
+  </header>
+  <main>
+    <form action="#">
+      <label for="user-name">Name:</label>
+      <input type="text" name="user-name" id="user-name" placeholder="Your name" maxlength="20" />
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Your email" required="required" />
+      <div class="tip-body">
+        <div class="tip-text">Form field hint</div>
+      </div>
+      <label for="website">Website:</label>
+      <input type="url" name="website" id="website" placeholder="Your website" required="required" />
+      <div class="tip-body">
+        <div class="tip-text">Form field hint</div>
+      </div>
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" rows="5"></textarea>
+      <button>Submit</button>
+    </form>
+  </main>
+</body>
+</html>

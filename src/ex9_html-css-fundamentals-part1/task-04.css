@@ -1,0 +1,57 @@
+section {
+	margin: 20px;
+}
+
+div {
+	width: 300px;
+	height: 200px;
+}
+
+.method-1 > div {
+	background: rgba(96, 185, 141, 0.5);
+	position: relative;
+}
+
+.method-1 > div > div {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	background: rgba(96, 185, 141, 0.75);
+}
+
+.method-1 > div > div > div {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	background: rgba(96, 185, 141, 1);
+}
+
+.method-2 > div {
+	background: rgba(96, 185, 141, 1);
+	box-shadow: 5px 5px rgba(96, 185, 141, 0.75), 10px 10px rgba(96, 185, 141, 0.5);
+}
+
+.method-3 > div {
+	background: rgba(96, 185, 141, 0.75);
+	position: relative;
+}
+
+.method-3 > div::before, .method-3 > div::after {
+	position: absolute;
+  content: '';
+	width: 300px;
+	height: 200px;
+}
+.method-3 > div::before {
+	background: rgba(96, 185, 141, 1);
+	top: -5px;
+	left: -5px;
+	z-index: 1;
+}
+
+.method-3 > div::after {
+	background: rgba(96, 185, 141, 0.5);
+	top: 5px;
+	left: 5px;
+	z-index: -1;
+}

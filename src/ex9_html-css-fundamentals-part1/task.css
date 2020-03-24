@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1.6rem;
+  color: red;
+  margin: 0 5px 0;
+}
+
+header {
+  margin: 2rem 0;
+  border-bottom: 3px solid black;
+  width: 100%;
+}
+
+main {
+  align-self: flex-start;
+}
+
+form {
+  display: grid;
+  grid-template-columns: [labels] 1fr [controls] 5fr [tips] 2fr;
+  grid-auto-flow: row;
+  grid-gap: 2rem 0;
+  padding: 1rem;
+}
+
+form > label {
+  grid-column: labels;
+  grid-row: auto;
+  font-weight: 700;
+}
+
+form > input {
+  max-width: 75%;
+}
+
+form > textarea {
+  min-width: 30rem;
+  resize: none;
+}
+
+form > input, form > textarea {
+  grid-column: controls;
+  grid-row: auto;
+  border: 1px solid black;
+  border-radius: .2em;
+  outline: none;
+  font-weight: 400;
+  padding: .5rem;
+  margin-left: 5rem;
+}
+
+form > label, form > input, form > textarea {
+  font-size: 2rem;
+}
+
+form > button {
+  grid-column: 2/3;
+  max-width: 10rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: .5rem;
+  background: linear-gradient(#ebebeb, #eee);
+  border: 1px solid #c6c6c6;
+  border-radius: .5rem;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form > .tip-body {
+  grid-column: tips;
+  position: relative;
+  align-self: center;
+  height: 24px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 24px;
+  color: white;
+  padding: 0 .3rem;
+  background: indianred;
+}
+
+.tip-body .tip-text {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  width: calc(100% - 20px);
+}
+
+.tip-body .tip-text::before {
+  content: '';
+  border: 6px solid transparent;
+  border-right: 6px solid indianred;
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  margin: 0;
+  padding: 0;
+}
