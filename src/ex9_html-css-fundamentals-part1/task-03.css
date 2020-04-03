@@ -8,7 +8,8 @@ body {
 	padding: 20px;
 }
 
-button {
+.btn-wrapper {
+	display: inline-block;
 	background: #ccc;
 	outline: none;
 	border: none;
@@ -20,7 +21,7 @@ button {
 	padding: .5rem;
 }
 
-.btn-wrapper {
+.btn-content {
 	display: flex;
 	align-items: center;
 	text-align: center;
