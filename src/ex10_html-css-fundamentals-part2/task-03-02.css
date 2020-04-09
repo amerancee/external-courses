@@ -1,0 +1,37 @@
+#customers-list {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+#customers-list .table-heading,
+#customers-list .table-content {
+	transition: 150ms ease;
+}
+
+#customers-list tr:nth-child(odd) {
+	background: #e3eaf3;
+}
+
+#customers-list tr:nth-child(even) {
+	background: #f2f6fa;
+}
+
+#customers-list .table-content:hover {
+	background: #e2e5e9;
+}
+
+#customers-list th {
+	padding: 5px 15px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#customers-list td {
+	cursor: pointer;
+	text-align: left;
+	padding: 15px;
+}
+
+#customers-list td:nth-child(1) {
+	text-transform: capitalize;
+}
