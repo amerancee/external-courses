@@ -1,0 +1,37 @@
+* {
+	margin: 15px auto;
+}
+
+div {
+	width: 200px;
+	height: 100px;
+	background: #17b978;
+}
+
+#first-item {
+	border: 3px solid #002651;
+}
+
+#second-item {
+	box-shadow: 0 0 0 3px #002651;
+}
+
+#third-item {
+	outline: 3px solid #002651;
+}
+
+#fourth-item {
+	position: relative;
+	background: #17b978;
+}
+
+#fourth-item .fourth-item-border {
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+	margin: 0;
+	z-index: -1;
+	background: #002651;
+}
