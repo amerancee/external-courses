@@ -1,0 +1,27 @@
+.btn-create-list {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 33px;
+    padding-left: 8px;
+    padding-right: 17px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-create-list__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-create-list__text {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #000;
+    padding-left: 12px;
+}

@@ -1,0 +1,8 @@
+@import "./style/app/app.css";
+@import "./style/header/header.css";
+@import "./style/main/main.css";
+@import "./style/footer/footer.css";
+@import "./style/components/buttons/btn-menu.css";
+@import "./style/components/buttons/btn-create-list.css";
+@import "./style/components/buttons/btn-drop-options.css";
+@import "./style/components/user-menu/user-menu.css";

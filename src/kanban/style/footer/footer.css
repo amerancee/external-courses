@@ -1,0 +1,41 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: #0067A3;
+}
+
+.footer__task-bar {
+    display: grid;
+    grid-template-areas: "active finished author";
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.task-active-item {
+    grid-area: active;
+    padding-left: 67px;
+    padding-right: 36px;
+}
+
+.task-finished-item {
+    grid-area: finished;
+}
+
+.task-author-item {
+    grid-area: author;
+    padding-right: 24px;
+}
+
+.task-active-item,
+.task-finished-item,
+.task-author-item {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #fff;
+}

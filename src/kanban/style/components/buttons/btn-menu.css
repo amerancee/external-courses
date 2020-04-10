@@ -1,0 +1,11 @@
+.btn-menu {
+    display: inline-block;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-menu__icon {
+    width: 45px;
+    height: 45px;
+}
