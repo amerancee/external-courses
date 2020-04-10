@@ -498,3 +498,48 @@ main .about-item p {
         padding-bottom: 40px;
     }
 }
+
+@media (max-width: 960px) {
+    main .main-wrap {
+        width: 90%;
+    }
+
+    main h1 {
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 700px) {
+    header .search-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 580px) {
+    header .burger-btn {
+        height: 40px;
+        width: 40px;
+    }
+
+    header .burger-stroke {
+        height: 6px;
+    }
+
+    .search-input {
+        width: 100px;
+    }
+
+    main h1 {
+        font-size: 5rem;
+    }
+
+    main h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        width: 70px;
+    }
+}
