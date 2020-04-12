@@ -1,0 +1,222 @@
+@keyframes loader {
+    from, to {
+        height: 20%;
+    }
+    20% {
+        height: 40%;
+    }
+    40% {
+        height: 60%;
+    }
+    60% {
+        height: 80%;
+    }
+    80% {
+        height: 100%;
+    }
+}
+
+@keyframes top-block {
+    from {
+        left: 0;
+    }
+    50% {
+        left: calc(100% - 30px);
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes bottom-block {
+    from {
+        left: calc(100% - 30px);
+    }
+    50% {
+        left: 0;
+    }
+    to {
+        left: calc(100% - 30px);
+    }
+}
+
+@keyframes sphere {
+    from {
+        left: 5px;
+        top: 0;
+    }
+    50% {
+        left: calc(100% - 25px);
+        top: calc(100% - 20px);
+    }
+    to {
+        left: 5px;
+        top: 0;
+    }
+}
+
+@keyframes many-steps {
+    from {
+        background: linear-gradient(#ff304f, #071e3d);
+        border-radius: 50%;
+    }
+    15% {
+        background: linear-gradient(#ff304f, #071e3d);
+        border-radius: 0;
+    }
+    30% {
+        background: radial-gradient(#ffcd61, #2b352b);
+        transform: skew(0) scale(1);
+    }
+    45% {
+        background: radial-gradient(#ffcd61, #2b352b);
+        transform: skew(-45deg) scale(0.6) rotate(0);
+    }
+    60% {
+        background: radial-gradient(#ffcd61, #2b352b);
+        transform: skew(-45deg) scale(0.6) rotate(180deg);
+    }
+    75% {
+        background: radial-gradient(#2e806e, #e8ff0c);
+        transform: skew(-45deg) scale(0.6) rotate(180deg);
+        border-radius: 0;
+    }
+    85%, to {
+        background: radial-gradient(#2e806e, #e8ff0c);
+        transform: skew(-45deg) scale(0.6) rotate(180deg);
+        border-radius: 50%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+.task-head {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-wrap,
+.sphere-wrap,
+.infinity-wrap {
+    display: flex;
+    position: relative;
+    margin: 20px 0;
+}
+
+.loader-wrap {
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100px;
+    height: 50px;
+}
+
+.sphere-wrap {
+    flex-flow: column nowrap;
+    width: 100px;
+    height: 100px;
+}
+
+.infinity-wrap {
+    flex-flow: row nowrap;
+    width: 100px;
+    height: 100px;
+}
+
+.animation-head {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.2rem;
+    left: -200px;
+}
+
+.loader-wrap > div {
+    background: #17b978;
+    width: 10px;
+    height: 20%;
+    animation: loader 4s infinite ease;
+}
+
+.loader-wrap > div:nth-child(1) {
+    animation-delay: .2s;
+}
+
+.loader-wrap > div:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.loader-wrap > div:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.loader-wrap > div:nth-child(4) {
+    animation-delay: .8s;
+}
+
+.loader-wrap > div:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.block {
+    position: relative;
+    width: 30px;
+    height: 10%;
+    background: #086972;
+}
+
+.sphere-wrap .block:nth-child(1) {
+    left: 0;
+    animation: top-block 1s infinite linear;
+}
+
+.sphere-wrap .block:nth-child(3) {
+    left: calc(100% - 30px);
+    animation: bottom-block 1s infinite linear;
+}
+
+.sphere-area {
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+.sphere-area > div {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #071a52;
+    animation: sphere 2s infinite linear;
+}
+
+.infinity-wrap > div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ff304f, #071e3d);
+    border-radius: 50%;
+    animation: many-steps 6s infinite ease;
+}
