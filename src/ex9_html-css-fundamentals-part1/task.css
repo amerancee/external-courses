@@ -1,125 +1,165 @@
 * {
-  box-sizing: border-box;
-  font-family: 'Baloo Chettan 2', cursive;
-  font-size: 10px;
+    box-sizing: border-box;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 10px;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 40%;
-  margin: 0 auto;
+    margin: 0 auto;
+    width: 50%;
 }
 
 h1 {
-  font-size: 4rem;
-  line-height: 4rem;
-  padding: 0;
-  margin: 0;
+    font-size: 4rem;
+    line-height: 4rem;
+    padding: 0;
+    margin: 0;
 }
 
 p {
-  font-size: 1.6rem;
-  color: red;
-  margin: 0 5px 0;
+    font-size: 1.6rem;
+    color: red;
+    margin: 0 5px 0;
 }
 
 header {
-  margin: 2rem 0;
-  border-bottom: 3px solid black;
-  width: 100%;
+    margin-top: 20px;
+    width: 100%;
 }
 
 main {
-  align-self: flex-start;
+    align-self: flex-start;
 }
 
 form {
-  display: grid;
-  grid-template-columns: [labels] 1fr [controls] 5fr [tips] 2fr;
-  grid-auto-flow: row;
-  grid-gap: 2rem 0;
-  padding: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "label name" "label email" "label site" "label message" ". button";
+    grid-gap: 20px 0;
+    padding: 30px 10px 10px 10px;
+    width: 100%;
+    border-top: 3px solid black;
 }
 
-form > label {
-  grid-column: labels;
-  grid-row: auto;
-  font-weight: 700;
+.field-name {
+    grid-area: name;
 }
 
-form > input {
-  max-width: 75%;
+.field-email {
+    grid-area: email;
+    position: relative;
 }
 
-form > textarea {
-  min-width: 30rem;
-  resize: none;
+.field-site {
+    grid-area: site;
+    position: relative;
 }
 
-form > input, form > textarea {
-  grid-column: controls;
-  grid-row: auto;
-  border: 1px solid black;
-  border-radius: .2em;
-  outline: none;
-  font-weight: 400;
-  padding: .5rem;
-  margin-left: 5rem;
+.field-message {
+    grid-area: message;
 }
 
-form > label, form > input, form > textarea {
-  font-size: 2rem;
+.field-name, .field-email, .field-site {
+    padding-right: 100px;
 }
 
-form > button {
-  grid-column: 2/3;
-  max-width: 10rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: .5rem;
-  background: linear-gradient(#ebebeb, #eee);
-  border: 1px solid #c6c6c6;
-  border-radius: .5rem;
-  outline: none;
+.field-name, .field-email, .field-site, .field-message {
+    padding-left: 50px;
+    min-width: 350px;
+    max-width: 500px;
+}
+
+
+label {
+    grid-area: label;
+    grid-row: auto;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+input, textarea {
+    border: 1px solid black;
+    border-radius: .2em;
+    outline: none;
+    font-weight: 400;
+    padding: 5px;
+}
+
+label, input, textarea {
+    font-size: 2rem;
+}
+
+button {
+    grid-area: button;
+    max-width: 10rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 5px;
+    background: linear-gradient(#ebebeb, #eee);
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    outline: none;
 }
 
 button:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-form > .tip-body {
-  grid-column: tips;
-  position: relative;
-  align-self: center;
-  height: 24px;
-  margin-left: 10px;
-  text-align: center;
-  line-height: 24px;
-  color: white;
-  padding: 0 .3rem;
-  background: indianred;
+.tip-body {
+    position: absolute;
+
+    align-self: center;
+    display: inline-flex;
+    min-height: 24px;
+    margin-left: 10px;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 50%);
+    text-align: center;
+    line-height: 24px;
+    color: white;
+    padding: 0 3px;
+    background: indianred;
 }
 
 .tip-body .tip-text {
-  display: inline-block;
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  height: inherit;
-  width: calc(100% - 20px);
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 15px;
+    height: inherit;
+
 }
 
 .tip-body .tip-text::before {
-  content: '';
-  border: 6px solid transparent;
-  border-right: 6px solid indianred;
-  position: absolute;
-  left: -10px;
-  top: 6px;
-  margin: 0;
-  padding: 0;
+    position: absolute;
+    content: '';
+    border: 6px solid transparent;
+    border-right: 6px solid indianred;
+    left: -10px;
+    top: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    body {
+        width: 60%;
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        width: 70%;
+        margin: 0 0 0 10px;
+    }
 }

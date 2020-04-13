@@ -1,54 +1,54 @@
 * {
-	box-sizing: border-box;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-	padding: 20px;
+    padding: 20px;
 }
 
 .btn-wrapper {
-	display: inline-block;
-	background: #ccc;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	border-radius: 1rem;
-	box-shadow: 0 0 0 .1rem #fff, 
-							0 0 0 .2rem #666, 
-							0 .1rem .3rem .1rem #666;
-	padding: .5rem;
+    display: inline-block;
+    background: #ccc;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px #fff,
+    0 0 0 4px #666,
+    0 2px 6px 2px #666;
+    padding: 10px;
 }
 
 .btn-content {
-	display: flex;
-	align-items: center;
-	text-align: center;
-	background: linear-gradient(to bottom, #ebebeb 0%, #cdcdcd 50%, #ababab 100%);
-	box-shadow: 0 1px 2px #6a6a6a, inset 0 -1px 1px #6a6a6a;
-	border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #ebebeb 0%, #cdcdcd 50%, #ababab 100%);
+    box-shadow: 0 1px 2px #6a6a6a, inset 0 -1px 1px #6a6a6a;
+    border-radius: 10px;
 }
 
 .btn-text {
-	color: #545454;	
-	font-size: 1.6rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	user-select: none;
-	padding: .5rem 1rem;
+    color: #545454;
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none;
+    padding: 10px 20px;
 }
 
 .btn-text::before, .btn-text::after {
-	font-size: 1.7rem;
-	content: '\2605';
-	color: #898989;
+    font-size: 3.4rem;
+    content: '\2605';
+    color: #898989;
 }
 
 .btn-text::before {
-	padding-right: .3rem;
+    padding-right: 5px;
 }
 
 .btn-text::after {
-	padding-left: .3rem;
+    padding-left: 5px;
 }

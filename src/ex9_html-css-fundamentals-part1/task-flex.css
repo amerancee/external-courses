@@ -1,36 +1,36 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  padding: 30px;
+    padding: 30px;
 }
 
 main {
-  display: flex;
-  flex-flow: row wrap;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 header {
-  flex-basis: 100%;
-  background: lightblue;
+    flex-basis: 100%;
+    background: lightblue;
 }
 
 section {
-  background: lightgreen;
-  width: 75%;
+    background: lightgreen;
+    flex-basis: 75%;
 }
 
 article {
-  background: white;
-  margin: 0 0 1rem 0;
+    background: white;
+    margin: 0 0 1rem 0;
 }
 
 aside {
-  background: pink;
-  width: 25%;
+    background: pink;
+    flex-basis: 25%;
 }
 
 header, article, section, .module {
-  padding: 1rem;
+    padding: 1rem;
 }
