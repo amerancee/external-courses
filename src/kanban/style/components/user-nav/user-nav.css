@@ -1,0 +1,32 @@
+.user-nav {
+    padding: 10px 30px 10px 30px;
+    margin: 0;
+    background: #fff;
+    transition: 200ms ease-in-out;
+}
+
+.user-nav-list {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-nav-list__item {
+    padding-top: 10px;
+}
+
+.user-nav-list__item:last-child {
+    padding-top: 30px;
+}
+
+.user-nav-list__link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #555555;
+    transition: color 200ms ease;
+}
+
+.user-nav-list__link:hover {
+    color: #0079BF;
+}

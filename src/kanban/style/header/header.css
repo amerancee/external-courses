@@ -28,6 +28,22 @@
     padding-right: 49px;
 }
 
-.header__user-menu {
+.header__btn-user-menu {
     grid-area: user-menu;
+}
+
+.header__user-nav {
+    position: absolute;
+    top: 55px;
+    animation: user-nav-open 200ms ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes user-nav-open {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
 }
