@@ -37,6 +37,7 @@
     top: 55px;
     animation: user-nav-open 200ms ease;
     animation-fill-mode: forwards;
+    z-index: 1;
 }
 
 @keyframes user-nav-open {

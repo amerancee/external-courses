@@ -1,7 +1,8 @@
 .user-nav {
-    padding: 10px 30px 10px 30px;
+    padding: 0;
     margin: 0;
     background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
     transition: 200ms ease-in-out;
 }
 
@@ -10,23 +11,30 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: flex-start;
+    padding: 0;
 }
 
 .user-nav-list__item {
-    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
 }
 
-.user-nav-list__item:last-child {
-    padding-top: 30px;
+.user-nav-list__item, .user-nav-list__link {
+    transition: 200ms ease;
 }
 
 .user-nav-list__link {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-decoration: none;
     color: #555555;
-    transition: color 200ms ease;
 }
 
-.user-nav-list__link:hover {
+.user-nav-list__item:hover {
+    background: #EBECF0;
+}
+
+.user-nav-list__item:hover > .user-nav-list__link {
     color: #0079BF;
 }
