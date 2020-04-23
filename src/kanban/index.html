@@ -6,7 +6,7 @@
     <title>Kanban board</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="root">
+<body class="root" id="root">
 <header class="header">
     <div class="btn-menu header__menu">
         <img class="btn-menu__icon" src="./images/btn-menu.svg" alt="menu"/>
@@ -14,7 +14,7 @@
     <h1 class="header__title">Awesome Kanban board</h1>
     <div class="header__btn-create-list">
         <button class="btn-create-list">
-            <img class="btn-create-list__icon" src="./images/plus-icon.svg" alt="plus"/>
+            <img class="btn-create-list__icon" src="./images/solid-plus-icon.svg" alt="plus"/>
             <span class="btn-create-list__text">Create new list</span>
         </button>
     </div>
@@ -23,7 +23,7 @@
         <div class="btn-user-menu__symbol"></div>
     </button>
 </header>
-<main class="main"></main>
+<main class="main" id="main"></main>
 <footer class="footer">
     <ul class="footer__task-bar">
         <li class="task-active-item">Active tasks: 5</li>
@@ -31,6 +31,6 @@
         <li class="task-author-item">Kanban board by Dmitry, 2020</li>
     </ul>
 </footer>
-<script src="./script/UserNavController/UserNavController.js"></script>
+<script src="./App.js" type="module"></script>
 </body>
 </html>

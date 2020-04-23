@@ -1,0 +1,21 @@
+.btn-edit-text { /*Пока не используется, но пригодится в дальнейшем в проекте. */
+    position: relative;
+    left: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-edit-text::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: '\2714';
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #2faa0c;
+}

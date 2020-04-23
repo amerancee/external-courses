@@ -1,5 +1,20 @@
 .main {
-    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: calc(100vh - 110px);
+    min-width: 100%;
+    margin: 55px 0;
     background: #0079BF;
-    padding: 55px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.main__card-box {
+    margin: 20px 12px;
+}
+
+.main__card-box:first-child {
+    margin: 20px 12px 20px 19px;
 }
