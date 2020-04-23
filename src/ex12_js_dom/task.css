@@ -38,18 +38,25 @@
     position: relative;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 600px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: calc(100% + 10px);
+    height: 670px;
+    padding: 5px;
+    background: rgba(0,0,0,0.1);
+    border: 2px solid black;
 }
 
 .slider-wrap {
-    display: flex;
-    flex-flow: row nowrap;
     position: relative;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 100%;
+    height: 600px;
     overflow: hidden;
 }
 
@@ -82,7 +89,8 @@
 
 .btn-to-left, .btn-to-right {
     position: absolute;
-    top: calc(50% - 40px / 2);
+    bottom: 10px;
+    /*top: calc(50% - 40px / 2);*/
     width: 40px;
     height: 40px;
     border: none;
@@ -92,11 +100,11 @@
 }
 
 .btn-to-left {
-    left: 10px;
+    left: calc(50% - 75px);
 }
 
 .btn-to-right {
-    right: 10px;
+    right: calc(50% - 75px);
 }
 
 .btn-to-left::before, .btn-to-right::before {
@@ -124,11 +132,11 @@
 
 .btn-to-left:hover::before, .btn-to-left:focus::before,
 .btn-to-right:hover::before, .btn-to-right:focus::before {
-    color: #eee30a;
+    color: #08c111;
 }
 
 .btn-to-left:hover, .btn-to-left:focus,
 .btn-to-right:hover, .btn-to-right:focus {
     cursor: pointer;
-    outline: 4px solid #eee30a;
+    outline: 4px solid #08c111;
 }
