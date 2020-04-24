@@ -53,10 +53,28 @@
     border-radius: 5px;
 }
 
+.card__new-name-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../../../images/arrow-down-black.svg");
+    background-position: right;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+
 .new-name-select__card-name,
 .new-name-select__empty {
     font-size: 1.8rem;
     line-height: 2.1rem;
     text-align: left;
     color: #000;
+}
+
+.new-name-select__empty {
+    display: none;
+}
+
+.new-name-select__card-name {
+
 }

@@ -12,7 +12,7 @@ class CardController {
                 issues: [
                     {
                         id: 'task1',
-                        name: 'aaa111',
+                        name: 'Login page – performance issues',
                     },
                 ],
             },
@@ -160,6 +160,14 @@ class CardController {
     newIssueHandler(link, elementType, id, indexTo) {
         let text = null;
         let element = document.getElementById(id);
+        element.focus();
+
+        if (elementType === "textarea") {
+            element.addEventListener("keyup", valueHandler);
+            element.addEventListener("focusout", focusOutHandler);
+        } else if (elementType === "select") {
+            element.addEventListener("change", valueHandler);
+        }
 
         function valueHandler() {
             text = element.value;
@@ -198,14 +206,6 @@ class CardController {
             link.localDataWrite(link.cardsDataKey, link.cardsData);
             link.updateIssues(link.cardsData);
             element.removeEventListener("change", valueHandler);
-        }
-
-        if (elementType === "textarea") {
-            element.addEventListener("keyup", valueHandler);
-            element.addEventListener("focusout", focusOutHandler);
-        } else if (elementType === "select") {
-            element.focus();
-            element.addEventListener("change", valueHandler);
         }
     }
 
