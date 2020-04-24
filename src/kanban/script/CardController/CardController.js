@@ -121,7 +121,7 @@ class CardController {
                 "beforeend",
                 `<li class="card-box-list__new-card">
                         <select class="card__new-name-select" id="${fieldId}">
-                            <option class="new-name-select__empty" selected="selected" disabled="disabled">Chose card ...</option>
+                            <option class="new-name-select__empty" selected="selected" disabled="disabled">Choose card ...</option>
                         </select>
                       </li>`
             );
