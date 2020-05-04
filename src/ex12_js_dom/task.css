@@ -1,0 +1,142 @@
+@keyframes right-to-left {
+    from {
+        left: 900px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes left-to-right {
+    from {
+        left: -900px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: 20px auto;
+    width: 900px;
+    height: 600px;
+}
+
+.heading {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: calc(100% + 10px);
+    height: 670px;
+    padding: 5px;
+    background: rgba(0,0,0,0.1);
+    border: 2px solid black;
+}
+
+.slider-wrap {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slider-item {
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    width: 900px;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slider-item-initial {
+    left: 0;
+    background-image: url("./asset/img-1.jpg");
+}
+
+.slider-item-next {
+    left: 900px;
+    animation: right-to-left 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.slider-item-prev {
+    left: -900px;
+    animation: left-to-right 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.btn-to-left, .btn-to-right {
+    position: absolute;
+    bottom: 10px;
+    /*top: calc(50% - 40px / 2);*/
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: 4px solid #2d2d2d;
+    background: transparent;
+    transition: 100ms ease-in;
+}
+
+.btn-to-left {
+    left: calc(50% - 75px);
+}
+
+.btn-to-right {
+    right: calc(50% - 75px);
+}
+
+.btn-to-left::before, .btn-to-right::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: #2d2d2d;
+    transform: translateY(calc((40px - 2.5rem) / 2));
+    transition: 100ms ease-in;
+}
+
+.btn-to-left::before {
+    content: '<';
+}
+
+.btn-to-right::before {
+    content: '>';
+}
+
+.btn-to-left:hover::before, .btn-to-left:focus::before,
+.btn-to-right:hover::before, .btn-to-right:focus::before {
+    color: #08c111;
+}
+
+.btn-to-left:hover, .btn-to-left:focus,
+.btn-to-right:hover, .btn-to-right:focus {
+    cursor: pointer;
+    outline: 4px solid #08c111;
+}
