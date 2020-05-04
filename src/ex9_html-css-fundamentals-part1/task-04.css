@@ -1,0 +1,58 @@
+section {
+    margin: 20px;
+}
+
+div {
+    width: 300px;
+    height: 200px;
+}
+
+.layer-top {
+    background: rgba(96, 185, 141, 0.5);
+    position: relative;
+}
+
+.layer-middle {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background: rgba(96, 185, 141, 0.75);
+}
+
+.layer-bottom {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background: rgba(96, 185, 141, 1);
+}
+
+.layers-shadow {
+    background: rgba(96, 185, 141, 1);
+    box-shadow: 5px 5px rgba(96, 185, 141, 0.75), 10px 10px rgba(96, 185, 141, 0.5);
+}
+
+.layers-pseudo {
+    background: rgba(96, 185, 141, 0.75);
+    position: relative;
+}
+
+.layers-pseudo::before, .layers-pseudo::after {
+    position: absolute;
+    content: '';
+    width: 300px;
+    height: 200px;
+}
+
+.layers-pseudo::before {
+    background: rgba(96, 185, 141, 1);
+    top: -5px;
+    left: -5px;
+    z-index: 1;
+}
+
+.layers-pseudo::after {
+    background: rgba(96, 185, 141, 0.5);
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+}
