@@ -1,23 +1,27 @@
-import UserNavController from "./script/UserNavController/UserNavController.js";
-import CardController from "./script/CardController/CardController.js";
+import Header from "./src/components/Header/Header.js";
+import Main from "./src/components/Main/Main.js";
+import Footer from "./src/components/Footer/Footer.js";
+import UserNavigation from "./src/components/UserNavigation/UserNavigation.js";
 
 class App {
     constructor() {
-        this.cardController = new CardController();
-        this.userNavController = new UserNavController();
+        this.header = new Header();
+        this.main = new Main();
+        this.footer = new Footer();
+        this.userNavigation = new UserNavigation();
     }
 
-    startMainApp() {
-        this.userNavController.start();
-        this.cardController.start();
+    start() {
+        this.header.start();
+        this.main.start();
+        this.footer.start();
+        this.userNavigation.start();
     }
 }
 
 const app = new App();
 
 window.onload = () => {
-    //localStorage.clear();
-    app.startMainApp();
+    // localStorage.clear();
+    app.start();
 }
-
-export default App

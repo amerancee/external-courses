@@ -27,7 +27,7 @@
 .btn-user-menu__symbol::before {
     content: '';
     position: absolute;
-    background-image: url("../../../images/arrow-down.svg");
+    background-image: url("../../../../public/images/arrow-down.svg");
     left: 0;
     top: 0;
     width: 100%;

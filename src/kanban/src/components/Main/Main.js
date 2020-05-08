@@ -1,4 +1,4 @@
-class CardController {
+class Main {
     constructor() {
         this.state = {
             taskCounter: 1,
@@ -46,19 +46,23 @@ class CardController {
         cardsData.forEach((articleTask) => {
             mainBox.insertAdjacentHTML(
                 "beforeend",
-                `<article class="card-box main__card-box" id="${articleTask.id}">
-                        <div class="card-box__head-box">
-                            <h3 class="head-box__heading">${articleTask.title}</h3>
-                            <button class="btn-show-props head-box__btn-show-props" title="Show properties">&bull;&bull;&bull;</button>
-                        </div>
-                        <div class="card-box__content">
-                            <ul class="card-box-list"></ul>
-                            <button class="btn-add-card card-box__content-btn btn-add-card__active" id="btn-add-${articleTask.id}">
-                                <img class="btn-add-card__symbol" src="./images/empty-plus-icon.svg" alt="plus">
-                                <span class="btn-add-card__text">Add card</span>
-                            </button>
-                        </div>
-                      </article>`
+                `
+                        <article class="card-box main__card-box" id="${articleTask.id}">
+                            <div class="card-box__head-box">
+                                <h3 class="head-box__heading">${articleTask.title}</h3>
+                                <button class="btn-show-props head-box__btn-show-props" 
+                                    title="Show properties">&bull;&bull;&bull;</button>
+                            </div>
+                            <div class="card-box__content">
+                                <ul class="card-box-list"></ul>
+                                <button class="btn-add-card card-box__content-btn btn-add-card__active" 
+                                    id="btn-add-${articleTask.id}">
+                                    <img class="btn-add-card__symbol" src="./public/images/empty-plus-icon.svg" 
+                                    alt="plus"/>
+                                    <span class="btn-add-card__text">Add card</span>
+                                </button>
+                            </div>
+                        </article>`
             );
             let cardListEl = document.querySelector(`#${articleTask.id} .card-box-list`);
 
@@ -80,9 +84,10 @@ class CardController {
         articleTask.issues.forEach((issue) => {
             cardList.insertAdjacentHTML(
                 "beforeend",
-                `<li class="card-box-list__card" id="${articleTask.id}-${issue.id}">
-                         <p class="card__description">${issue.name}</p>
-                      </li>`
+                `
+                        <li class="card-box-list__card" id="${articleTask.id}-${issue.id}">
+                            <p class="card__description">${issue.name}</p>
+                        </li>`
             );
         });
     }
@@ -90,9 +95,10 @@ class CardController {
     renderEmptyIssue(cardListEl) {
         cardListEl.insertAdjacentHTML(
             "beforeend",
-            `<li class="card-box-list__empty-card">
-                      <p class="card__description">&#128542; There are no added cards</p>
-                  </li>`
+            `
+                    <li class="card-box-list__empty-card">
+                        <p class="card__description">&#128542; There are no added cards</p>
+                    </li>`
         );
     }
 
@@ -106,9 +112,11 @@ class CardController {
             fieldId = "new-card-text";
             cardListEl.insertAdjacentHTML(
                 "beforeend",
-                `<li class="card-box-list__new-card">
-                        <textarea class="card__new-name-field" rows="2" placeholder="Card name ..." id="${fieldId}"></textarea>
-                      </li>`
+                `
+                        <li class="card-box-list__new-card">
+                            <textarea class="card__new-name-field" rows="2" 
+                                placeholder="Card name ..." id="${fieldId}"></textarea>
+                        </li>`
             );
             let link = this;
             elementType = "textarea";
@@ -119,11 +127,13 @@ class CardController {
             fieldId = "new-card-select";
             cardListEl.insertAdjacentHTML(
                 "beforeend",
-                `<li class="card-box-list__new-card">
-                        <select class="card__new-name-select" id="${fieldId}">
-                            <option class="new-name-select__empty" selected="selected" disabled="disabled">Choose card ...</option>
-                        </select>
-                      </li>`
+                `
+                        <li class="card-box-list__new-card">
+                            <select class="card__new-name-select" id="${fieldId}">
+                                <option class="new-name-select__empty" selected="selected" 
+                                    disabled="disabled">Choose card ...</option>
+                            </select>
+                        </li>`
             );
             let selectEl = document.getElementById(`${fieldId}`);
 
@@ -280,4 +290,4 @@ class CardController {
 
 }
 
-export default CardController
+export default Main

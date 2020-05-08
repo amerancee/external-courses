@@ -7,7 +7,7 @@
     background: #0067A3;
 }
 
-.footer__task-bar {
+.footer__taskbar {
     display: grid;
     grid-template-areas: "active finished author";
     grid-template-columns: auto 1fr auto;
@@ -17,24 +17,24 @@
     height: 100%;
 }
 
-.task-active-item {
+.footer__active {
     grid-area: active;
     padding-left: 67px;
     padding-right: 36px;
 }
 
-.task-finished-item {
+.footer__finished {
     grid-area: finished;
 }
 
-.task-author-item {
+.footer__author {
     grid-area: author;
     padding-right: 24px;
 }
 
-.task-active-item,
-.task-finished-item,
-.task-author-item {
+.footer__active,
+.footer__finished,
+.footer__author {
     font-size: 1.8rem;
     line-height: 2.1rem;
     color: #fff;
