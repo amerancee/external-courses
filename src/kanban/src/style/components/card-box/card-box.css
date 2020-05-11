@@ -4,7 +4,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-shrink: 0;
-    width: 282px;
+    flex-grow: 0;
+    flex-basis: 282px;
     max-height: calc(100% - 40px);
     padding: 12px 0 0 12px;
     background: #EBECF0;
@@ -42,7 +43,7 @@
 }
 
 .card-box__content-btn {
-    margin-top: 17px;
+    margin: 17px 2px 2px 2px;
 }
 
 .card-box-list {
@@ -51,4 +52,10 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
+}
+
+@media (min-width: 2560px) {
+    .card-box {
+        flex-basis: 23%;
+    }
 }

@@ -7,9 +7,9 @@ class Header {
         this.header.insertAdjacentHTML(
             "beforeend",
             `
-                    <div class="btn-menu header__menu">
+                    <button class="btn-menu header__menu">
                         <img class="btn-menu__icon" src="./public/images/btn-menu.svg" alt="menu"/>
-                    </div>
+                    </button>
                     <h1 class="header__title">Awesome Kanban board</h1>
                     <div class="header__btn-create-list">
                         <button class="btn-create-list">

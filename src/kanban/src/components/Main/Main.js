@@ -1,8 +1,7 @@
+import CardCreateController from "./CardCreateController.js";
+
 class Main {
     constructor() {
-        this.state = {
-            taskCounter: 1,
-        };
         this.cardsData = [];
         this.cardsDataKey = "localCardsData";
         this.cardsDataMock = [
@@ -32,6 +31,15 @@ class Main {
                 issues: [],
             },
         ];
+        this.controller = new CardCreateController(
+            this.cardsData,
+            this.cardsDataKey,
+            this.disableAddButtons,
+            this.renderIssues,
+            this.renderEmptyIssue,
+            this.restoreAddButtonsStates,
+            this.localDataWrite
+        );
     }
 
     start() {
@@ -102,123 +110,6 @@ class Main {
         );
     }
 
-    renderNewIssueField(cardsData, articleId) {
-        let fieldId = null;
-        let elementType = null;
-        let cardListEl = document.querySelector(`#${articleId} .card-box-list`);
-        let indexTo = 0;
-
-        if (articleId === "backlog") {
-            fieldId = "new-card-text";
-            cardListEl.insertAdjacentHTML(
-                "beforeend",
-                `
-                        <li class="card-box-list__new-card">
-                            <textarea class="card__new-name-field" rows="2" 
-                                placeholder="Card name ..." id="${fieldId}"></textarea>
-                        </li>`
-            );
-            let link = this;
-            elementType = "textarea";
-            this.disableAddButtons();
-            link.newIssueHandler(link, elementType, fieldId, indexTo);
-
-        } else {
-            fieldId = "new-card-select";
-            cardListEl.insertAdjacentHTML(
-                "beforeend",
-                `
-                        <li class="card-box-list__new-card">
-                            <select class="card__new-name-select" id="${fieldId}">
-                                <option class="new-name-select__empty" selected="selected" 
-                                    disabled="disabled">Choose card ...</option>
-                            </select>
-                        </li>`
-            );
-            let selectEl = document.getElementById(`${fieldId}`);
-
-            cardsData.forEach((articleTask, articleIndex, articles) => {
-                if (articleTask.id === articleId) {
-                    indexTo = articleIndex;
-                    articles[articleIndex - 1].issues.forEach((issue, issueIndex) => {
-                        selectEl.insertAdjacentHTML(
-                            "beforeend",
-                            `<option class="new-name-select__card-name">${issue.name}</option>`
-                        );
-                    });
-                }
-            });
-            let link = this;
-            elementType = "select";
-            this.disableAddButtons();
-            link.newIssueHandler(link, elementType, fieldId, indexTo);
-        }
-    }
-
-    updateIssues(cardsData) {
-        let renderType = "update";
-        cardsData.forEach((articleTask) => {
-            let cardListEl = document.querySelector(`#${articleTask.id} .card-box-list`);
-            this.renderIssues(articleTask, cardListEl, renderType);
-            if (articleTask.issues.length === 0) {
-                this.renderEmptyIssue(cardListEl);
-            }
-        });
-        this.restoreAddButtonsStates();
-    }
-
-    newIssueHandler(link, elementType, id, indexTo) {
-        let text = null;
-        let element = document.getElementById(id);
-        element.focus();
-
-        if (elementType === "textarea") {
-            element.addEventListener("keyup", valueHandler);
-            element.addEventListener("focusout", focusOutHandler);
-        } else if (elementType === "select") {
-            element.addEventListener("change", valueHandler);
-        }
-
-        function valueHandler() {
-            text = element.value;
-            if (elementType === "select") {
-                choiceHandler();
-            }
-        }
-
-        function focusOutHandler() {
-            // eslint-disable-next-line no-param-reassign
-            link.state.taskCounter += 1;
-            link.cardsData[indexTo].issues.push({
-                id: `task${link.state.taskCounter}`,
-                name: text
-            });
-            link.localDataWrite(link.cardsDataKey, link.cardsData);
-            link.updateIssues(link.cardsData);
-            element.removeEventListener("keyup", valueHandler);
-            element.removeEventListener("focusout", focusOutHandler);
-        }
-
-        function choiceHandler() {
-            let position = null;
-            let taskIdFrom = null;
-            link.cardsData[indexTo - 1].issues.forEach((item,index) => {
-                if (item.name === text) {
-                    position = index;
-                    taskIdFrom = item.id;
-                }
-            });
-            link.cardsData[indexTo].issues.push({
-                id: taskIdFrom,
-                name: text
-            });
-            link.cardsData[indexTo - 1].issues.splice(position, 1);
-            link.localDataWrite(link.cardsDataKey, link.cardsData);
-            link.updateIssues(link.cardsData);
-            element.removeEventListener("change", valueHandler);
-        }
-    }
-
     localDataLoad(key, data) {
         let dataToReceive = [];
         data.splice(0, data.length);
@@ -257,7 +148,7 @@ class Main {
         cardsData.forEach((articleTask) => {
             btnAddEl = document.getElementById(`btn-add-${articleTask.id}`);
             btnAddEl.addEventListener("click", () => {
-                this.renderNewIssueField(cardsData, articleTask.id);
+                this.controller.renderNewIssueField(cardsData, articleTask.id);
             });
         });
     }

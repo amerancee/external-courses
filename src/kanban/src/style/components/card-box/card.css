@@ -26,6 +26,7 @@
 }
 
 .card__description {
+    display: inline-block;
     width: 100%;
 }
 
@@ -47,10 +48,15 @@
     border: 2px solid #000;
     background: #fff;
 }
+.card__new-name-field:focus,
+.card__new-name-select:focus {
+    outline: 2px solid #5252d9;
+    border: 2px solid transparent;
+}
+
 
 .card__new-name-field {
     resize: none;
-    border-radius: 5px;
 }
 
 .card__new-name-select {
