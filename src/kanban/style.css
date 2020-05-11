@@ -1,0 +1,13 @@
+@import "./src/style/app.css";
+@import "./src/style/components/header/header.css";
+@import "./src/style/components/main/main.css";
+@import "./src/style/components/footer/footer.css";
+@import "./src/style/components/buttons/btn-menu.css";
+@import "./src/style/components/buttons/btn-create-list.css";
+@import "./src/style/components/buttons/btn-drop-options.css";
+@import "./src/style/components/buttons/btn-show-props.css";
+@import "./src/style/components/buttons/btn-add-card.css";
+@import "./src/style/components/buttons/btn-tick-apply.css";
+@import "./src/style/components/user-nav/user-nav.css";
+@import "./src/style/components/card-box/card-box.css";
+@import "./src/style/components/card-box/card.css";

@@ -1,0 +1,41 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: #0067A3;
+}
+
+.footer__taskbar {
+    display: grid;
+    grid-template-areas: "active finished author";
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer__active {
+    grid-area: active;
+    padding-left: 67px;
+    padding-right: 36px;
+}
+
+.footer__finished {
+    grid-area: finished;
+}
+
+.footer__author {
+    grid-area: author;
+    padding-right: 24px;
+}
+
+.footer__active,
+.footer__finished,
+.footer__author {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #fff;
+}

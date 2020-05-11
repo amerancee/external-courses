@@ -1,0 +1,82 @@
+.card-box-list__card,
+.card-box-list__empty-card,
+.card-box-list__new-card {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.card-box-list__card {
+    background: #fff;
+}
+
+.card-box-list__card:first-child {
+    margin-top: 0;
+}
+
+.card-box-list__card,
+.card-box-list__empty-card {
+    border-radius: 5px;
+}
+
+.card-box-list__new-card {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card__description {
+    display: inline-block;
+    width: 100%;
+}
+
+.card__description,
+.card__new-name-field,
+.card__new-name-select {
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: left;
+    padding: 7px 9px 7px 8px;
+    width: 100%;
+    color: #000;
+}
+
+.card__new-name-field,
+.card__new-name-select {
+    outline: none;
+    border: 2px solid #000;
+    background: #fff;
+}
+.card__new-name-field:focus,
+.card__new-name-select:focus {
+    outline: 2px solid #5252d9;
+    border: 2px solid transparent;
+}
+
+
+.card__new-name-field {
+    resize: none;
+}
+
+.card__new-name-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../../../../public/images/arrow-down-black.svg");
+    background-position: right;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+
+.new-name-select__card-name,
+.new-name-select__empty {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: left;
+    color: #000;
+}
+
+.new-name-select__empty {
+    display: none;
+}
